@@ -2,8 +2,8 @@ package Task1;
 
 import java.time.LocalDate;
 
-public class Animal {
-    private String name;
+public abstract class Animal {
+    protected String name;
     private Illness illness;
     private String ownerName;
     private LocalDate birthday;
@@ -20,9 +20,7 @@ public class Animal {
     public void setName(String name){
         this.name = name;
     }
-    public String getName() {
-        return name;
-    }
+    public abstract String getName();
     public Illness getIllness() {
         return illness;
     }
@@ -37,11 +35,10 @@ public class Animal {
         System.out.println(getClass().getSimpleName() + " go to bed");
     }
     private void play(){
-        System.out.println(getClass().getSimpleName() + " go to play");
-    }
-    public void toGo() { System.out.println(getClass().getSimpleName() + " to go");}
-    public void fly() { System.out.println(getClass().getSimpleName() + " to fly");}
-    public void swim() { System.out.println(getClass().getSimpleName() + " to swim");}
+        System.out.println(getClass().getSimpleName() + " go to play");}
+    //public void toGo() { System.out.println(getClass().getSimpleName() + " to go");}
+   // public void fly() { System.out.println(getClass().getSimpleName() + " to fly");}
+   // public void swim() { System.out.println(getClass().getSimpleName() + " to swim");}
     public void liveCycle(){
         toWakeUp();
         eat();
@@ -50,5 +47,15 @@ public class Animal {
     }
     public void breathe(){
         System.out.println("breathe");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", illness=" + illness +
+                ", ownerName='" + ownerName + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

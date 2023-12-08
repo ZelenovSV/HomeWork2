@@ -7,7 +7,7 @@ public class Illness {
         this.illnessName = illnessName;
     }
     public void heal(){
-        System.out.println("drink water with paracetamol");
+       System.out.println("drink water with paracetamol");
     }
 
     @Override
